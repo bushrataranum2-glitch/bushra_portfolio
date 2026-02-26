@@ -20,4 +20,3 @@ This is my personal portfolio website built using React.
 
 ## Author
 Bushra Taranum
-Aspiring Web Developer
