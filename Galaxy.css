@@ -1,0 +1,110 @@
+/* Galaxy.css */
+.galaxy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: rotate 200s linear infinite;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 80px 190px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 160px 50px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 230px 120px, #fffa, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 290px 80px, #fffa, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 340px 160px, #fffa, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  opacity: 0.5;
+}
+
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: twinkle 4s infinite;
+}
+
+.twinkling::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(2px 2px at 50px 100px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(2px 2px at 150px 200px, #fff, rgba(0, 0, 0, 0)),
+    radial-gradient(3px 3px at 250px 300px, #fff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  opacity: 0;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(100, 50, 200, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(50, 20, 150, 0.1) 0%, transparent 50%);
+  animation: moveClouds 30s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveClouds {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-10%);
+  }
+}
